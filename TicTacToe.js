@@ -1,9 +1,20 @@
+/**
+ * Program for playing basic Tic-Tac-Toe
+ *
+ * @author chris.frank michael.felix tim.rose
+ */
+
 let board = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let turnCount = 1;
 let currentTurn = 'X';
 
 console.log("Tic Tac Toe, three in a row!!");
 gameTurn();
+
+/**
+ * Fuction that acepts imput from player on which box they want to chose
+ * then updates counter and board array. 
+ */
 
 function gameTurn() {
   printBoard(board);
@@ -36,6 +47,10 @@ function gameTurn() {
 
 }
 
+/**
+ * Function to draw board in console.
+ */
+
 function printBoard(board) {
     console.log("           ")
     console.log(" " + board[0] + " | " + board[1] + " | " + board[2] + " ")
@@ -45,6 +60,10 @@ function printBoard(board) {
     console.log(" " + board[6] + " | " + board[7] + " | " + board[8] + " ")
     console.log("           ")
   }
+
+  /**
+ * Function to check if a player has won the game. Then updates board appropriately.
+ */
 
 function checkVictory() {
   if ((board[0] === board[1]) && (board[1] === board[2])) {      //if horizontal top row positions equal each other
@@ -96,6 +115,10 @@ function checkVictory() {
     return true;
   }
 }
+
+  /**
+ * Checks if input from the user is valid for game play.
+ */
 
 function isEntryValid(text) {
   let regex1 = /[1-9]/
